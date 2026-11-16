@@ -185,7 +185,6 @@ const onSubmit = async () => {
   .enquire-layout {
     display: flex;
     min-height: 100vh;
-    padding-top: 0.72rem;
 
     .enquire-image {
       flex: 0 0 42%;
@@ -366,7 +365,6 @@ const onSubmit = async () => {
   .enquire-page {
     .enquire-layout {
       flex-direction: column;
-      padding-top: 0.52rem;
 
       .enquire-image {
         flex: none;
