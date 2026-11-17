@@ -490,9 +490,10 @@ watch(scrollY, (newVal) => {
         }
 
         .model-price {
-          margin-top: 0.02rem;
+          margin-top: 0.005rem;
           color: #b4866f;
-          font-size: 0.14rem;
+          font-size: 0.18rem;
+          font-weight: 500;
           white-space: nowrap;
         }
       }
