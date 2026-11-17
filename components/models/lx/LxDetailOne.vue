@@ -8,7 +8,10 @@
     <div class="detail_content">
       <div class="detail_title">
         <div class="title_01">EXPLORE YOUR MODERN SELF</div>
-        <div class="title_02">THE NEW LX</div>
+        <div class="title_02">
+          THE NEW LX
+          <span class="model-price">{{ modelPrices.lx }}</span>
+        </div>
       </div>
     </div>
     <div class="title_Jump">
@@ -20,6 +23,7 @@
   <script setup>
 import { watch } from "vue";
 import { useAnimation } from "~/utils/hooks/useAnimation.js";
+import { modelPrices } from "@/components/layouts/data.js";
 
 const { targetRef, isVisible } = useAnimation({
   threshold: 0.3,
@@ -99,6 +103,11 @@ watch(isVisible, (newVal) => {
           transform: translateY(0);
           opacity: 1;
         }
+      }
+      .model-price {
+        margin-left: 0.1rem;
+        color: #dbb193;
+        white-space: nowrap;
       }
     }
   }

@@ -1,3 +1,8 @@
+export const modelPrices = {
+  lx: "BHD 9,950",
+  rx: "BHD 13,950",
+};
+
 export const navData = [
   {
     id: 1,
@@ -38,6 +43,7 @@ export const navData = [
         id: 1,
         text: "RX",
         link: "rx",
+        price: modelPrices.rx,
       },
       {
         id: 2,
@@ -48,6 +54,7 @@ export const navData = [
         id: 3,
         text: "LX",
         link: "lx",
+        price: modelPrices.lx,
       },
       {
         id: 4,

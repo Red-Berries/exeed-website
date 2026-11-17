@@ -38,10 +38,19 @@
       ul {
         li {
           height: 0.64rem;
-          line-height: 0.64rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           text-align: center;
           font-size: 0.18rem;
           color: rgba(255, 255, 255, 0.7);
+          line-height: 1.2;
+
+          .model-price {
+            margin-top: 0.03rem;
+            color: #dbb193;
+            font-size: 0.14rem;
+          }
         }
       }
     }

@@ -42,7 +42,8 @@
           :key="item.id"
           @click="onlevel2Click(item)"
         >
-          {{ item.text }}
+          <span>{{ item.text }}</span>
+          <span v-if="item.price" class="model-price">{{ item.price }}</span>
         </li>
       </ul>
     </div>

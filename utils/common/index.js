@@ -191,6 +191,12 @@ const Fetch = (code) => {
     }).then(res => {
       if (res.code === 0) {
         const data = res.data || [];
+        const resolveOosAsset = (url) => {
+          if (typeof url !== "string" || !url.startsWith("/platform/")) {
+            return url;
+          }
+          return new URL(url, config.public.oosURL).toString();
+        };
         const result = data.map(item => {
           let jsondef = {};
           if (item.jsondef) {
@@ -202,6 +208,8 @@ const Fetch = (code) => {
           }
           return {
             ...item,
+            image: resolveOosAsset(item.image),
+            imageMobile: resolveOosAsset(item.imageMobile),
             jsondef,
           }
         }).sort((a, b) => a.sort - b.sort);

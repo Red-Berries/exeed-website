@@ -63,6 +63,7 @@
                 :alt="item.text"
               />
               <span class="model-name">EXEED {{ item.text }}</span>
+              <span class="model-price">{{ item.price }}</span>
             </div>
           </div>
         </div>
@@ -81,7 +82,7 @@
 <script setup>
 import { useHeaderStore } from "@/stores/useHeader.ts";
 import HeadPop from "./HeadPop.vue";
-import { navData } from "./data.js";
+import { modelPrices, navData } from "./data.js";
 const { scrollY } = useScroll();
 const router = useRouter();
 const route = useRoute();
@@ -111,8 +112,8 @@ const isHeadPopActive = ref(false);
 // Models dropdown state
 const isModelsDropdownOpen = ref(false);
 const modelsDropdownList = [
-  { text: "LX", icon: "LX.png", link: "lx" },
-  { text: "RX", icon: "RX.png", link: "rx" },
+  { text: "LX", icon: "LX.png", link: "lx", price: modelPrices.lx },
+  { text: "RX", icon: "RX.png", link: "rx", price: modelPrices.rx },
 ];
 
 const config = useRuntimeConfig();
@@ -485,6 +486,13 @@ watch(scrollY, (newVal) => {
           font-size: 0.14rem;
           color: #333;
           font-weight: 500;
+          white-space: nowrap;
+        }
+
+        .model-price {
+          margin-top: 0.02rem;
+          color: #b4866f;
+          font-size: 0.14rem;
           white-space: nowrap;
         }
       }

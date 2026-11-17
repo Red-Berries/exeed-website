@@ -28,6 +28,7 @@
             RX-Keep Exploring, CDC Never Wobbling
           </div>
         </div>
+        <div class="model-price">{{ modelPrices.rx }}</div>
         <div class="title_01">
           <div>CONTROL YOUR FURIOUS JOURNEY</div>
         </div>
@@ -45,6 +46,7 @@
 <script setup>
 import RxDetailThree from "@/components/models/rx/RxDetailThree.vue";
 import { useAnimation } from "~/utils/hooks/useAnimation.js";
+import { modelPrices } from "@/components/layouts/data.js";
 
 // 使用 useAnimation Hook
 const { targetRef, isVisible } = useAnimation({
@@ -68,12 +70,14 @@ watch(isVisible, (newVal) => {
     targetRef.value.querySelector(".img_01").classList.add("animate");
     targetRef.value.querySelector(".title_nav").classList.add("animate");
     targetRef.value.querySelector(".title").classList.add("animate");
+    targetRef.value.querySelector(".model-price").classList.add("animate");
     targetRef.value.querySelector(".title_01").classList.add("animate");
     targetRef.value.querySelector(".title_Jump").classList.add("animate");
   } else {
     targetRef.value.querySelector(".img_01").classList.remove("animate");
     targetRef.value.querySelector(".title_nav").classList.remove("animate");
     targetRef.value.querySelector(".title").classList.remove("animate");
+    targetRef.value.querySelector(".model-price").classList.remove("animate");
     targetRef.value.querySelector(".title_01").classList.remove("animate");
     targetRef.value.querySelector(".title_Jump").classList.add("animate");
   }
@@ -168,6 +172,21 @@ onBeforeUnmount(() => {
     .title_01 {
       display: none;
     }
+    .model-price {
+      margin-top: 0.08rem;
+      color: #dbb193;
+      font-size: 0.24rem;
+      line-height: 0.32rem;
+      transform: translateY(1rem);
+      opacity: 0;
+      transition: all 1s;
+      transition-delay: 0.85s;
+
+      &.animate {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   }
 }
 @media screen and (max-width: 1024px) {
@@ -178,6 +197,10 @@ onBeforeUnmount(() => {
     .detail_title {
       position: absolute;
       left: 0.2rem;
+      .model-price {
+        font-size: 0.14rem;
+        line-height: 0.2rem;
+      }
       .title_nav {
         width: 1.96rem;
         margin-bottom: 0.1rem;
